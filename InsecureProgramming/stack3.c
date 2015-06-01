@@ -7,11 +7,15 @@ void canNeverExecute(){
 	exit(0);
 }
 
-int main() {
-	int cookie;
-	char buf[80];
-
+void print(char buf[], int cookie){
 	printf("buf: %08x cookie: %08x\n", &buf, &cookie);
+}
+
+int main(void) {
+	int cookie;
+	char buf[8];
+	print(buf[], &cookie);
+
 	gets(buf);
 
 	if (cookie == 0x01020005)
