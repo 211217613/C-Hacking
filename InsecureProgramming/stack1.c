@@ -5,10 +5,12 @@
 
 int main() {
 	int cookie;
-	char buf[80];
+	char buf[10];
 
 	printf("buf: %08x cookie: %08x\n", &buf, &cookie);
 	gets(buf);
+
+	printf("cookie: %x\n", *(&cookie));
 
 	if (cookie == 0x41424344)
 		printf("you win!\n");

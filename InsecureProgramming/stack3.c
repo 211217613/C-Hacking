@@ -2,6 +2,10 @@
  * specially crafted to feed your brain by gera */
 
 #include <stdio.h>
+void canNeverExecute(){
+	puts("Your LEET!!");
+	exit(0);
+}
 
 int main() {
 	int cookie;
