@@ -1,3 +1,9 @@
+#Kernel
+*.out
+
+#Text
+*.txt
+
 # Object files
 *.o
 *.ko

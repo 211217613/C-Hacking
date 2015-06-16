@@ -1,3 +1,5 @@
+all:
+	
 format: fmt_strings.c
 	gcc -Wall -ggdb -o fmt_strings.out fmt_strings.c
 fmt: fmt_vln.c
