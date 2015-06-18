@@ -1,25 +1,29 @@
+/*  
+	/usr/src/linux-headers-2.6.32-21-generic/include/linux 
+*/
 #include <linux/module.h>
 #include <linux/init.h>
 #include <linux/kernel.h>
-#include <linux/symtab_begin.h>
+#include <linux/kobject.h>
 
 MODULE_LICENSE("GPL");
 
-
-static inline void __list_delete(struct list_head * prev, struct list_head * next){
-	next->prev = prev;
-	prev->next = next;
-}
+#define START_CHECK 0XC0000000
+#define END_CHECK 0xD0000000
 
 
-int in_module(void){
-	register_symtab(NULL);
+typedef unsigned int psize;
+
+static int in_module(void){
+	/* Kernel Module hiding*/
+	// list_del_init(&__this_module.list); // hide from lsmod:/proc/modules
+	// kobject_del(&THIS_MODULE->mkobj.kobj); //hide from /sys/module
+	
 	printk("Hacking: module loaded\n");
-	printk("%d\n", i386);
-	return 0;
+	return 0;		
 }
 
-void out_module(void){
+static void out_module(void){
 	printk("Hacking: module removed\n");
 }
 
