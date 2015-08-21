@@ -19,6 +19,7 @@ int main(int argc, char *argv[]){
 	printf(text);
 
 	puts("");
+	printf("%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s");
 
 	//DEBUG
 	printf("[*] test_val @ %#x = %d %#x\n", &test_val, test_val, test_val );
